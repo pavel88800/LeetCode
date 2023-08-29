@@ -1,5 +1,19 @@
 using System.Text.RegularExpressions;
 
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        var solution = new Solution();
+
+        var testInputDigit =
+            "3-5";
+
+        var outputResult = solution.MyAtoi(testInputDigit);
+        Console.WriteLine(outputResult);
+    }
+}
+/*********/
 public class Solution
 {
     public int MyAtoi(string s)
