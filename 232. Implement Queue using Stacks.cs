@@ -16,6 +16,7 @@ internal class Program
     }
 }
 
+
 public class MyQueue
 {
     private Stack<int> _firstStack;
@@ -40,20 +41,13 @@ public class MyQueue
         var returnedFirstStackValue = firstStackToList.First();
 
         firstStackToList.Remove(firstStackToList.First());
-        foreach (var item in firstStackToList)
-        {
-            _secondStack.Push(item);
-        }
-
+        firstStackToList.ForEach(x => _secondStack.Push(x));
         _firstStack.Clear();
 
         var secondStackToList = _secondStack.ToList();
         secondStackToList.Reverse();
-        foreach (var item in secondStackToList)
-        {
-            _firstStack.Push(item);
-        }
-
+        secondStackToList.ForEach(x=>_firstStack.Push(x));
+        
         _secondStack.Clear();
         return returnedFirstStackValue;
     }
